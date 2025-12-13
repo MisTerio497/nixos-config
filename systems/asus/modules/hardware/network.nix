@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   networking = {
     hostName = "nixos";
@@ -6,13 +11,13 @@
       "1.1.1.1"
       "1.0.0.1"
     ];
-    extraHosts = "
-    # JetBrains:
-    50.7.85.221 datalore.jetbrains.com
-    107.150.34.100 plugins.jetbrains.com
-    185.246.223.127 download.jetbrains.com
-    185.246.223.127 api.jetbrains.ai
-    ";
+    # extraHosts = "
+    # # JetBrains:
+    # 50.7.85.221 datalore.jetbrains.com
+    # 107.150.34.100 plugins.jetbrains.com
+    # 185.246.223.127 download.jetbrains.com
+    # 185.246.223.127 api.jetbrains.ai
+    # ";
     proxy = {
       # allProxy = if config.services.sing-box.enable then "socks5://127.0.0.1:10808" else "";
       noProxy = "127.0.0.1,localhost,.local,.ru,nixos.org,cachix.org";
@@ -20,7 +25,7 @@
     networkmanager = {
       enable = true;
       wifi.powersave = false;
-      
+
       ensureProfiles.profiles = {
         RT-5GPON-4957 = {
           connection = {
