@@ -19,7 +19,7 @@ in
   environment.systemPackages = with pkgs; [
     pciutils
     age
-    unrar-free
+    rar
     libsecret
     mesa-demos
     efibootmgr

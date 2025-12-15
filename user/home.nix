@@ -14,19 +14,19 @@ in
     inherit username homeDirectory;
     stateVersion = "25.11";
   };
-  
-  home.pointerCursor = {
-    x11.enable = true;             # включить X11 курсор
-    name = "capitaine-cursors";          # имя темы курсора
-    size = 30;                     # размер курсора
-    package = pkgs.capitaine-cursors; # пакет с иконками/темой
+  home.sessionVariables = {
+    LD_PRELOAD = "${pkgs.xorg.libXcursor}/lib/libXcursor.so.1 ";
   };
+  # home.pointerCursor = {
+  #   x11.enable = true;             # включить X11 курсор
+  #   name = "capitaine-cursors";          # имя темы курсора
+  #   size = 30;                     # размер курсора
+  #   package = pkgs.capitaine-cursors; # пакет с иконками/темой
+  # };
 
-  
   nixpkgs.overlays = [
     (import ./overlays/prism-launcher.nix)
-  ]
-  ;
+  ];
 
   xdg = {
     userDirs = {
@@ -59,7 +59,7 @@ in
     let
       dirs = [
         "Desktop"
-        "Documents" 
+        "Documents"
         "Downloads"
         "Music"
         "Pictures"
@@ -70,7 +70,7 @@ in
       russianDirs = [
         "Рабочий стол"
         "Документы"
-        "Загрузки" 
+        "Загрузки"
         "Музыка"
         "Изображения"
         "Видео"
@@ -80,21 +80,20 @@ in
     in
     lib.hm.dag.entryAfter [ "writeBoundary" ] (
       builtins.concatStringsSep "\n" (
-        (map (dir: "mkdir -p ${dir}") dirs) ++
-        (map (dir: "rm -rf ${dir}") russianDirs)
+        (map (dir: "mkdir -p ${dir}") dirs) ++ (map (dir: "rm -rf ${dir}") russianDirs)
       )
     );
 
-    gtk = {
-        enable = true;
-        theme = {
-          name = "Breeze-Dark"; # или "Breeze"
-          package = pkgs.kdePackages.breeze-gtk;
-        };
-        iconTheme = {
-          name = "breeze";
-          package = pkgs.kdePackages.breeze-icons;
-        };
-      };
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Breeze-Dark"; # или "Breeze"
+      package = pkgs.kdePackages.breeze-gtk;
+    };
+    iconTheme = {
+      name = "breeze";
+      package = pkgs.kdePackages.breeze-icons;
+    };
+  };
   programs.home-manager.enable = true;
 }
