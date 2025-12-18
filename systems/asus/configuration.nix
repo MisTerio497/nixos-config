@@ -4,7 +4,6 @@
   pkgs,
   lib,
   inputs,
-  programs-sqlite-db,
   ...
 }:
 
@@ -119,7 +118,7 @@
   # Install firefox.
   programs.firefox.enable = true;
   programs.command-not-found.enable = true;
-  programs.command-not-found.dbPath = programs-sqlite-db;
+  programs.command-not-found.dbPath = inputs.flake-programs-sqlite.packages.${pkgs.system}.programs-sqlite;
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11";
 }

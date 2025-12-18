@@ -38,20 +38,22 @@
     # })
     
     vlc
-    unrar-free
     prismlauncher
     figma-linux
+    
     clang
+    clang-analyzer
     cmake
     clang-tools
     ninja
-    # zoom-us
+    libcxx
+
     handbrake
 
     # jetbrains-toolbox
     # jetbrains.idea-community-bin
     jetbrains.webstorm
-    # jetbrains.clion
+    jetbrains.clion
     typescript
     _64gram
     

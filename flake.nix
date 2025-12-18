@@ -50,7 +50,6 @@
       ...
     }@inputs:
     let
-      programs-sqlite-db = flake-programs-sqlite.packages.${system}.programs-sqlite;
       username = "ivan";
       hostname = "asus";
       system = "x86_64-linux";
@@ -66,7 +65,6 @@
       specialArgs = {
         inherit
           inputs
-          programs-sqlite-db
           username
           hostname
           ;

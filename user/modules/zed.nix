@@ -17,27 +17,22 @@ let
       "basher"
       "nu"
       # Tools
-      "proto"
       "log"
       "env"
-      "live-server"
       # Build
       "make"
       "just"
       # DevOps
       "dockerfile"
       "docker-compose"
-      "helm"
-      "terraform"
-      "kdl"
       # Formats
       "toml"
+      "neocmakelsp"
       "cargo-tom"
       "csv"
       "ini"
       "scheme"
       "asciidoc"
-      "http"
       "marksman"
       "markdown-oxide"
       # Themes
@@ -114,6 +109,7 @@ in
       typescript
       typescript-language-server
       clang-tools
+      clang-analyzer
       neocmakelsp
       jsonnet-language-server
       nixfmt-rfc-style

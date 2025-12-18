@@ -11,13 +11,10 @@
       "1.1.1.1"
       "1.0.0.1"
     ];
-    # extraHosts = "
-    # # JetBrains:
-    # 50.7.85.221 datalore.jetbrains.com
-    # 107.150.34.100 plugins.jetbrains.com
-    # 185.246.223.127 download.jetbrains.com
-    # 185.246.223.127 api.jetbrains.ai
-    # ";
+    extraHosts = "
+    # JetBrains:
+    185.246.223.127 download.jetbrains.com
+    ";
     
     networkmanager = {
       enable = true;
