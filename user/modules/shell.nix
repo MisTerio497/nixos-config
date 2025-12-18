@@ -5,7 +5,7 @@
   ...
 }:
 let
-  deploy = "sh /home/${username}/mynix-minimal/deploy.sh";
+  deploy = "sh /home/${username}/nix-config/deploy.sh";
 in
 {
   programs.fish = {
@@ -14,8 +14,8 @@ in
       zed = "zeditor";
       cls = "clear";
       ll = "ls -la";
-      re = "sudo nixos-rebuild switch --flake ~/mynix-minimal#${hostname} && ${deploy}";
-      up = "home-manager switch --flake ~/mynix-minimal#${username}";
+      re = "sudo nixos-rebuild switch --flake ~/nix-config#${hostname} --impure && ${deploy}";
+      up = "home-manager switch --flake ~/nix-config#${username}";
       helix = "hx";
     };
     interactiveShellInit = ''

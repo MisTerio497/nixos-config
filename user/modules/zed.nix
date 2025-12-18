@@ -1,4 +1,9 @@
-{ lib, pkgs, inputs, ... }:
+{
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 let
   zedBaseSettings = {
@@ -58,6 +63,7 @@ let
           formatting.command = [ "nixfmt" ];
         };
       };
+      
       nix = {
         binary = {
           path_lookup = true;
@@ -108,7 +114,6 @@ in
       nil
       typescript
       typescript-language-server
-      clang-tools
       clang-analyzer
       neocmakelsp
       jsonnet-language-server
@@ -126,39 +131,39 @@ in
   #           // === Базовые операции ===
   #           "ctrl-c": "core::Copy",
   #           "ctrl-с": "core::Copy",
-  
+
   #           "ctrl-v": "core::Paste",
   #           "ctrl-м": "core::Paste",
-  
+
   #           "ctrl-x": "core::Cut",
   #           "ctrl-ч": "core::Cut",
-  
+
   #           "ctrl-z": "core::Undo",
   #           "ctrl-я": "core::Undo",
-  
+
   #           "ctrl-shift-z": "core::Redo",
   #           "ctrl-shift-я": "core::Redo",
-  
+
   #           "ctrl-s": "core::Save",
   #           "ctrl-ы": "core::Save",
-  
+
   #           "ctrl-a": "core::SelectAll",
   #           "ctrl-ф": "core::SelectAll",
-  
+
   #           "ctrl-f": "editor::Find",
   #           "ctrl-а": "editor::Find",
-  
+
   #           "ctrl-h": "editor::Replace",
   #           "ctrl-р": "editor::Replace",
-  
+
   #           // === Комментирование ===
   #           "ctrl-/": "editor::ToggleLineComment",
   #           "ctrl-ю": "editor::ToggleLineComment",
-  
+
   #           // === Навигация ===
   #           "ctrl-g": "editor::GoToLine",
   #           "ctrl-г": "editor::GoToLine",
-  
+
   #           "ctrl-f3": "editor::FindNext",
   #           "ctrl-shift-f3": "editor::FindPrevious"
   #         }

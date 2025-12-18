@@ -73,7 +73,8 @@
     {
       nixosConfigurations = {
         asus = lib.nixosSystem {
-          inherit system pkgs;
+          inherit system;
+          inherit pkgs;
           specialArgs = specialArgs;
           modules = [
             home-manager.nixosModules.home-manager

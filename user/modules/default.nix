@@ -5,7 +5,7 @@
     ./zen.nix
     ./git.nix
     ./home-clean.nix
-    ./flatpak.nix
+    #./flatpak.nix
     #./stylix.nix
     ./shell.nix
     #./../pkgs/jetbra.nix

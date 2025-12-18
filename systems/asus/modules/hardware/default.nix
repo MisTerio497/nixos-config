@@ -3,5 +3,6 @@
     ./audio.nix
     ./network.nix
     ./optimus.nix
+    ./bluetooth.nix
   ];
 }

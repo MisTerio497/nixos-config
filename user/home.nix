@@ -15,7 +15,7 @@ in
     stateVersion = "25.11";
   };
   home.sessionVariables = {
-    LD_PRELOAD = "${pkgs.xorg.libXcursor}/lib/libXcursor.so.1 ";
+    LD_PRELOAD = "${pkgs.xorg.libXcursor}/lib/libXcursor.so.1 #LD_PRELOAD";
   };
   # home.pointerCursor = {
   #   x11.enable = true;             # включить X11 курсор

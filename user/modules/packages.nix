@@ -11,15 +11,6 @@
     # mpv.enable = true;
     chromium.enable = true;
     # direnv.enable = true;
-    # obs-studio = {
-    #   enable = true;
-    #   plugins = with pkgs.obs-studio-plugins; [
-    #     wlrobs
-    #     obs-vkcapture
-    #     obs-pipewire-audio-capture
-    #     obs-vaapi
-    #   ];
-    # };
   };
 
   home.packages = with pkgs; [
@@ -40,13 +31,6 @@
     vlc
     prismlauncher
     figma-linux
-    
-    clang
-    clang-analyzer
-    cmake
-    clang-tools
-    ninja
-    libcxx
 
     handbrake
 
@@ -54,27 +38,14 @@
     # jetbrains.idea-community-bin
     jetbrains.webstorm
     jetbrains.clion
-    typescript
+
     _64gram
     
     libreoffice-qt6
     hunspellDicts.ru_RU
-    hunspell
     
     # fragments
     qbittorrent
     krita
   ];
-  # ++ lib.optionals config.services.desktopManager.plasma6.enable [
-  #
-  # ]
-  # ++ lib.optionals config.services.xserver.desktopManager.gnome.enable [
-  #
-  # ];
-  # xdg.autostart = {
-  #   enable = true;
-  #   entries = [
-  #     "${pkgs._64gram}/share/applications/io.github.tdesktop_x64.TDesktop.desktop"
-  #   ];
-  # };
 }

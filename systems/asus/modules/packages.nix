@@ -7,7 +7,7 @@
 }:
 
 let
-  agenix = inputs.agenix.packages."${pkgs.system}".default;
+  agenix = inputs.agenix.packages."${pkgs.stdenv.hostPlatform.system}".default;
 in
 {
   imports = [

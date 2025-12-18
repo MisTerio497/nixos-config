@@ -11,13 +11,14 @@
   imports = [
     ./modules
     ./hardware-configuration.nix
+    ./programs.sqlite-fix.nix
     inputs.nixos-facter-modules.nixosModules.facter
   ];
-  
+
   facter.reportPath = ./facter.json;
   system.autoUpgrade = {
     enable = true;
-    flake = "/home/${username}/mynix-minimal";
+    flake = "/home/${username}/nix-config";
     dates = "weekly";
     allowReboot = false;
     randomizedDelaySec = "30min"; # случайная задержка
@@ -41,7 +42,7 @@
   #     user = "ivan";
   #   }
   # ];
-  
+
   # security.pam.services= {
   #   login = {
   #     enableGnomeKeyring = true;
@@ -51,7 +52,6 @@
   #     enableGnomeKeyring = true;
   #   };
   # };
-  services.gnome.gnome-keyring.enable = true;
   services.fwupd = {
     enable = true;
   };
@@ -66,7 +66,7 @@
     xkb.variant = "";
     xkb.options = "grp:alt_shift_toggle,ctrl:nocaps";
   };
-  
+
   hardware.nvidia-container-toolkit.enable = true;
   virtualisation.docker = {
     enable = true;
@@ -75,8 +75,7 @@
       setSocketVariable = true;
     };
   };
-  
-  
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
   programs.fish.enable = true;
@@ -117,8 +116,6 @@
   programs.adb.enable = true;
   # Install firefox.
   programs.firefox.enable = true;
-  programs.command-not-found.enable = true;
-  programs.command-not-found.dbPath = inputs.flake-programs-sqlite.packages.${pkgs.system}.programs-sqlite;
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11";
 }
