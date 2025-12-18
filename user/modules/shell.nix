@@ -5,18 +5,22 @@
   ...
 }:
 let
-  deploy = "sh /home/${username}/nix-config/deploy.sh";
+  deploy = "sh /home/${username}/nixos-config/deploy.sh";
 in
 {
   programs.fish = {
     enable = true;
     shellAliases = {
+      helix = "hx";
       zed = "zeditor";
+
       cls = "clear";
       ll = "ls -la";
-      re = "sudo nixos-rebuild switch --flake ~/nix-config#${hostname} --impure && ${deploy}";
-      up = "home-manager switch --flake ~/nix-config#${username}";
-      helix = "hx";
+      f="fastfetch";
+
+      re = "sudo nixos-rebuild switch --flake ~/nixos-config#${hostname} --impure && ${deploy}";
+      up = "home-manager switch --flake ~/nixos-config#${username}";
+      sys = "zeditor ~/nixos-config";
     };
     interactiveShellInit = ''
       set -U fish_greeting ""

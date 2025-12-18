@@ -1,14 +1,9 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   inputs,
   ...
 }:
-
-let
-  agenix = inputs.agenix.packages."${pkgs.stdenv.hostPlatform.system}".default;
-in
 {
   imports = [
     inputs.nix-flatpak.nixosModules.nix-flatpak
@@ -21,11 +16,10 @@ in
     age
     rar
     libsecret
-    mesa-demos
     efibootmgr
     agenix
+    fastfetch
     tree
-    package-version-server
     git
     openssl
     curl

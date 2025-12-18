@@ -57,7 +57,11 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ ];
+        overlays = [
+          (final: prev: {
+            agenix = agenix.packages."${prev.stdenv.hostPlatform.system}".default;
+          })
+        ];
       };
       
       lib = nixpkgs.lib;
