@@ -116,6 +116,8 @@ in
       typescript-language-server
       clang-analyzer
       neocmakelsp
+      cmake-language-server
+      package-version-server
       jsonnet-language-server
       nixfmt-rfc-style
       vscode-langservers-extracted

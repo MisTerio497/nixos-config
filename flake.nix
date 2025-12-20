@@ -64,7 +64,7 @@
         ];
       };
       
-      lib = nixpkgs.lib;
+      inherit (nixpkgs) lib;
       
       specialArgs = {
         inherit
