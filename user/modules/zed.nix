@@ -10,10 +10,6 @@ let
     extensions = [
       # Languages
       "nix"
-      "gosum"
-      "cue"
-      "rhai"
-      "zig"
       "sql"
       # Templating
       "jsonnet"
@@ -63,7 +59,7 @@ let
           formatting.command = [ "nixfmt" ];
         };
       };
-      
+
       nix = {
         binary = {
           path_lookup = true;
@@ -112,8 +108,8 @@ in
       pylint
       nixd
       nil
-      typescript
       typescript-language-server
+      clang-tools
       clang-analyzer
       neocmakelsp
       cmake-language-server

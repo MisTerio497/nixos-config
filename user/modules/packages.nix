@@ -1,37 +1,35 @@
-{
-  pkgs,
-  inputs,
-  username,
+{ pkgs,
+  lib,
   ...
 }:
+let
+  DE = lib.strings.toLower (builtins.getEnv "XDG_CURRENT_DESKTOP");
+in
 {
   fonts.fontconfig.enable = true;
-  nixpkgs.config.allowUnfree = true;
+
   programs = {
-    # mpv.enable = true;
     chromium.enable = true;
-    # direnv.enable = true;
   };
 
-  home.packages = with pkgs; [
-    vlc
-    prismlauncher
-    figma-linux
-
-    handbrake
-
-    # jetbrains-toolbox
-    # jetbrains.idea-community-bin
-    jetbrains.webstorm
-    jetbrains.clion
-
-    _64gram
-    
-    libreoffice-qt6
-    hunspellDicts.ru_RU
-    
-    # fragments
-    qbittorrent
-    krita
-  ];
+  home.packages =
+    with pkgs;
+    [
+      vlc
+      prismlauncher
+      figma-linux
+      jetbrains.webstorm
+      jetbrains.clion
+      _64gram
+    ]
+    ++ lib.lists.optionals (lib.strings.hasInfix "kde" DE) (with pkgs; [
+      qbittorrent
+      krita
+      libreoffice-qt6
+      hunspellDicts.ru_RU
+      hunspellDicts.en_EN
+    ])
+    ++ lib.lists.optionals (lib.strings.hasInfix "gnome" DE) (with pkgs; [
+      fragments
+    ]);
 }
