@@ -100,7 +100,7 @@ in
 {
   programs.zed-editor = {
     enable = true;
-    
+    userSettings = zedBaseSettings;
     # package = inputs.zed.packages.${pkgs.system}.default;
     extraPackages = with pkgs; [
       alejandra
