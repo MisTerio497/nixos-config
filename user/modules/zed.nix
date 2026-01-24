@@ -100,6 +100,7 @@ in
 {
   programs.zed-editor = {
     enable = true;
+    
     # package = inputs.zed.packages.${pkgs.system}.default;
     extraPackages = with pkgs; [
       alejandra
@@ -168,16 +169,16 @@ in
   #       }
   #     ]
   #   '';
-  home.activation.mergeZedSettings = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    mkdir -p ~/.config/zed
-    if [ -f ~/.config/zed/settings.json ]; then
-      tmpfile=$(mktemp)
-      jq -s '.[0] * .[1]' \
-        ${builtins.toFile "zedBase.json" (builtins.toJSON zedBaseSettings)} \
-        ~/.config/zed/settings.json > "$tmpfile"
-      mv "$tmpfile" ~/.config/zed/settings.json
-    else
-      echo '${builtins.toJSON zedBaseSettings}' > ~/.config/zed/settings.json
-    fi
-  '';
+  # home.activation.mergeZedSettings = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  #   mkdir -p ~/.config/zed
+  #   if [ -f ~/.config/zed/settings.json ]; then
+  #     tmpfile=$(mktemp)
+  #     jq -s '.[0] * .[1]' \
+  #       ${builtins.toFile "zedBase.json" (builtins.toJSON zedBaseSettings)} \
+  #       ~/.config/zed/settings.json > "$tmpfile"
+  #     mv "$tmpfile" ~/.config/zed/settings.json
+  #   else
+  #     echo '${builtins.toJSON zedBaseSettings}' > ~/.config/zed/settings.json
+  #   fi
+  # '';
 }

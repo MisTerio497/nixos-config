@@ -15,7 +15,7 @@
     # JetBrains:
     185.246.223.127 download.jetbrains.com
     ";
-    
+
     networkmanager = {
       enable = true;
       wifi.powersave = false;
@@ -134,5 +134,12 @@
     #     };
     #   };
     # };
+    firewall = {
+      enable = false;
+      allowedTCPPorts = [
+        80
+        443
+      ];
+    };
   };
 }
