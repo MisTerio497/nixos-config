@@ -18,7 +18,7 @@
   facter.reportPath = ./facter.json;
   system.autoUpgrade = {
     enable = true;
-    flake = "/home/${username}/nix-config";
+    flake = "/home/${username}/nixos-config";
     dates = "weekly";
     allowReboot = false;
     randomizedDelaySec = "30min"; # случайная задержка

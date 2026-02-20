@@ -92,7 +92,7 @@ let
     theme = {
       mode = "system";
       light = "One Light";
-      dark = "Gruvbox Dark Hard";
+      dark = "Catppuccin Mocha - No Italics";
     };
     show_whitespaces = "all";
   };

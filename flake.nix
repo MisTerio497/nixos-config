@@ -29,7 +29,10 @@
     # };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
     };
     # zed.url = "github:zed-industries/zed";
     # Utilities
@@ -63,9 +66,9 @@
           })
         ];
       };
-      
+
       inherit (nixpkgs) lib;
-      
+
       specialArgs = {
         inherit
           inputs

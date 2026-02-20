@@ -24,9 +24,9 @@ in
   #   package = pkgs.capitaine-cursors; # пакет с иконками/темой
   # };
 
-  nixpkgs.overlays = [
-    (import ./overlays/prism-launcher.nix)
-  ];
+  # nixpkgs.overlays = [
+  #   (import ./overlays/prism-launcher.nix)
+  # ];
 
   xdg = {
     userDirs = {

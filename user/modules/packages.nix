@@ -22,14 +22,14 @@ in
       jetbrains.clion
       _64gram
     ]
-    ++ lib.lists.optionals (lib.strings.hasInfix "kde" DE) (with pkgs; [
+    ++ lib.optionals (lib.strings.hasInfix "kde" DE) (with pkgs; [
       qbittorrent
       krita
       libreoffice-qt6
       hunspellDicts.ru_RU
       hunspellDicts.en_EN
     ])
-    ++ lib.lists.optionals (lib.strings.hasInfix "gnome" DE) (with pkgs; [
+    ++ lib.optionals (lib.strings.hasInfix "gnome" DE) (with pkgs; [
       fragments
     ]);
 }

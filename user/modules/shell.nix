@@ -18,7 +18,7 @@ in
       ll = "ls -la";
       f="fastfetch";
 
-      re = "sudo nixos-rebuild switch --flake ~/nixos-config#${hostname} --impure && ${deploy}";
+      re = "sudo nixos-rebuild switch --flake ~/nixos-config#${hostname} && ${deploy}";
       up = "home-manager switch --flake ~/nixos-config#${username}";
       sys = "zeditor ~/nixos-config";
     };
